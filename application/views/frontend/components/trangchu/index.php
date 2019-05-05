@@ -9,19 +9,22 @@
                     $this->load->view('frontend/modules/slider');
                 ?>
             </div>
-            <!-- <div class="col-md-2 col-lg-2 hidden-xs hidden-sm pull-right ads-right">
+            
+            <div class="col-md-6 col-lg-6 hidden-xs hidden-sm pull-right ads-right">
                 <div class="ads-top">
-                    <a href=""><img src="style/images/right-banner-1.jpg"></a>
+                    <a href=""><img src="public/images/b01.jpg"></a>
                 </div>
+            </div>
+            <div class="col-md-6 col-lg-6 hidden-xs hidden-sm pull-right ads-right">
                 <div class="ads-bottom">
-                    <a href=""><img src="style/images/right-banner-2.jpg"></a>
+                    <a href=""><img src="public/images/b02.jpg"></a>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <div class="services">
         <div class="container">
-            <div class="col-xs-12 cp;-sm-12 col-md-4 col-lg-4 item">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 item">
                 <div class="img-service">
                     <img src="public/images/policy1.jpg" class="pull-left">
                 </div>
@@ -82,7 +85,7 @@
                 $subCategory=$this->Mcategory->category_list($rowCategory['id'],'all');
                 $catId=$this->Mcategory->category_id($rowCategory['link']);
                 $listCatId=$this->Mcategory->category_listcat($catId);
-                $listProducts=$this->Mproduct->product_home_limit($listCatId,12);
+                $listProducts=$this->Mproduct->product_home_limit($listCatId,24);
             if(count($subCategory) && (count($listProducts) >= 6)):?>
                 <div class="list-product">
                     <div class="list-header-z">
@@ -102,20 +105,12 @@
                     </div>
                     <div class="list-product-content">
                         <?php foreach ($listProducts as $rowProducts) :?>
-                            <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 product-one">
-                                <div class="image-product">
-                                    <a href="<?php echo $rowProducts['alias'] ?>" title="<?php echo $rowProducts['name'] ?>">
-                                        <!-- <div class="img-bg" style="background: url(public/images/products/<?php echo $rowProducts['avatar'] ?>);">
-                                            
-                                        </div> -->
-                                        <img src="public/images/products/<?php echo $rowProducts['avatar'] ?>" class="img-bg">
+                            <div class="col-xs-6 col-sm-4 col-md-2 col-lg-4 product-one">
+                                <h4>
+                                    <a href="<?php echo $rowProducts['alias'] ?>" title="<?php echo $rowProducts['name'] ?>" class="ws-nw overflow ellipsis">
+                                        <?php echo $rowProducts['name']?>
                                     </a>
-                                    <h4>
-                                        <a href="<?php echo $rowProducts['alias'] ?>" title="<?php echo $rowProducts['name'] ?>" class="ws-nw overflow ellipsis">
-                                            <?php echo $rowProducts['name']?>
-                                        </a>
-                                    </h4>
-                                </div>
+                                </h4>
                                 <div class="price-product-item">
                                     <?php if($rowProducts['sale'] > 0) :?>
                                         <span class=""><?php echo(number_format($rowProducts['price_sale'])); ?>₫</span>
@@ -130,9 +125,19 @@
                                         -<?php echo $rowProducts['sale'] ?>%
                                     </div>
                                 <?php endif; ?>
+                                <div class="image-product">
+                                    <a href="<?php echo $rowProducts['alias'] ?>" title="<?php echo $rowProducts['name'] ?>">
+                                        <!-- <div class="img-bg" style="background: url(public/images/products/<?php echo $rowProducts['avatar'] ?>);">
+                                            
+                                        </div> -->
+                                        <img src="public/images/products/<?php echo $rowProducts['avatar'] ?>" class="img-bg">
+                                    </a>
+                                    
+                                </div>
+                                
                                 <div class="btn-action">
                                     <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $rowProducts['id']  ?>)"></button>
-                                    <button type="button" class="fa fa-eye""></button>
+                                    <a href="<?php echo $rowProducts['alias'] ?>"><button type="button" class="fa fa-eye"></button></a>
                                 </div>
                             </div>
                         <?php endforeach;?>

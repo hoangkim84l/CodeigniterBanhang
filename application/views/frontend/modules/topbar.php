@@ -49,6 +49,10 @@
 								echo "<li><a href='dang-nhap'>Đăng nhập</a></li>";
 							}
 						?>
+						
+						<li><a href="#">Điều khoản</a></li>
+						<li><a href="#">Chính sách</a></li>
+						<li><a href="#">Hỏi đáp</a></li>
 		          	</ul>
 		        </div>
                <!--  <div class="site-pusher">

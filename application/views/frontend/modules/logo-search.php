@@ -3,7 +3,7 @@
 	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 logo">
 		<a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>public/images/logo_FULL_PNG.png" alt="Green Construction"></a>
 	</div>
-	<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 search">
+	<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 search">
 		<form action="search" method="get" role="form">
 			<div class="input-search">
 				<input type="text" class="form-control" name="search" placeholder="Nhập từ khóa để tìm kiếm...">
@@ -30,6 +30,18 @@
 					}
 				?>
 			</span>
+		</a>
+	</div>
+	<div class="col-md-1 hidden-xs hidden-sm">
+		<a class="find-deal" href="#">
+			<img src="<?php echo base_url() ?>public/images/cart.png" alt="Cart">
+			<span>Hàng quốc tế</span>
+		</a>
+	</div>
+	<div class="col-md-1 hidden-xs hidden-sm">
+		<a class="find-deal-bonus" href="#">
+			<img src="<?php echo base_url() ?>public/images/cart.png" alt="Cart">
+			<span>Khuyến mãi</span>
 		</a>
 	</div>
 </div>

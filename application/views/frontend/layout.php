@@ -26,6 +26,7 @@
     <link href="public/css/menu-tab.css" rel="stylesheet">
     <link href="public/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="public/css/style.css" rel="stylesheet">
+    <link href="public/css/custom.css" rel="stylesheet">
     </head>
     <body>
         <div id="fb-root"></div>
