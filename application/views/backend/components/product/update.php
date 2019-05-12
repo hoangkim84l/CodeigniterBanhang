@@ -19,14 +19,6 @@
 		}
 	}
 	
-	$img = $row['img'];
-	$listImg = "";
-	$mang = explode('#', $img);
-	if(sizeof($mang)>0){
-		foreach ($mang as $values){ 
-			$listImg.="<img class='update-product' src='public/images/products/".$values."'>";
-		}
-	}
 ?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/product/update.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
@@ -103,10 +95,10 @@
 									<input name="number" class="form-control" type="number" value="<?php echo $row['number'] ?>" min="1" step="1" max="1000">
 								</div>
 								<div class="form-group">
-                                    <label>Hình đại diện</label>
-                                    <input type="file"  id="image_list" name="img" style="width: 100%">
+									<label>Hình đại diện</label>
+									<input type="file"  id="image_list" name="img" style="width: 100%">
 									<img class='update-product' src='public/images/products/<?php echo $row["avatar"]?>'>
-                                </div>
+								</div>
 								<div class="form-group">
 									<label>Quyền truy cập</label>
 									<select name="access" class="form-control">
