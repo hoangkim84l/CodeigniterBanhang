@@ -24,7 +24,7 @@
 								<div class="form-group">
 									<label>Tên sản phẩm <span class = "maudo">(*)</span></label>
 									<input type="text" class="form-control" name="name" style="width:100%" placeholder="Tên sản phẩm">
-									<div class="error" id="password_error"><?php echo form_error('name')?></div>
+									<div class="error" id="password_error" style="color:red;"><?php echo form_error('name')?></div>
 								</div>
 								<div class="form-group">
 									<label>Loại sản phẩm<span class = "maudo">(*)</span></label>

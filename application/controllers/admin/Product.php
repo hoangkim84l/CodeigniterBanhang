@@ -96,17 +96,12 @@ class Product extends CI_Controller {
               	if($this->upload->do_upload()){
 	                  //nếu upload thành công thì lưu toàn bộ dữ liệu
                   	$data = $this->upload->data();
-                  	var_dump($this->upload->do_upload());
 	                  //in cấu trúc dữ liệu của các file
              		$img .= $data['file_name'].'#';
-
-	        var_dump($_FILES['userfile']['tmp_name']);
               	}     
 	        }
 	        $img = rtrim($img, '#');
 	        $mydata['img']= $img;
-	        var_dump($mydata['img']);
-	        exit();
 	        if ( $this->upload->do_upload('img')){
                 $data = $this->upload->data();
                 $mydata['avatar']=$data['file_name'];
@@ -145,6 +140,10 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
 		$this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
 		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
+
+
+		
+
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'catid'=>$_POST['catid'],
@@ -163,6 +162,36 @@ class Product extends CI_Controller {
 				'status'=>$_POST['status'],
 				'access'=>$_POST['access']
 			);
+			
+			$config = array();
+			//thuc mục chứa file
+			$config['upload_path']   = './public/images/products/';
+			//Định dạng file được phép tải
+			$config['allowed_types'] = 'jpg|png|gif';
+			//Dung lượng tối đa
+			$config['max_size']      = '1500';
+			$config['encrypt_name'] = TRUE;
+			//Chiều rộng tối đa
+			$config['max_width']     = '2048';
+			//Chiều cao tối đa
+			$config['max_height']    = '1024';
+			//load thư viện upload
+			//bien chua cac ten file upload
+			$name_array = array();
+			
+			//lưu biến môi trường khi thực hiện upload
+			$file  = $_FILES['image_list'];
+			$count = count($file['name']);
+			$img = '';
+			$this->load->library('upload', $config);
+			
+			
+			if($_FILES['img'] != ""){ 
+				if ( $this->upload->do_upload('img')){
+					$data = $this->upload->data();
+					$mydata['avatar']=$data['file_name'];
+				}
+			}
 			$this->Mproduct->product_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật sản phẩm thành công');
 			redirect('admin/product','refresh');

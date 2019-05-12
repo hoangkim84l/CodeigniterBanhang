@@ -4924,4 +4924,9 @@ table.text-center th {
   }
 }
 
+.update-product{
+  height: 100%;
+  width: 100%;
+  padding: 10px 0;
+}
 

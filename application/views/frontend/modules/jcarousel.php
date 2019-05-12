@@ -1,8 +1,12 @@
 <div class="jcause-slider">
     <ul class="bxslider" style="width: 100%;clear: both;/* overflow: hidden; *//* min-height: 99px; */">
+        <li>
+            <img src="public/images/products/<?php echo $row['avatar']; ?>">
+        </li>
         <?php 
             $img = $row['img'];
             $mang = explode('#', $img);
+                
             foreach ($mang as $value) :?>
                 <li>
                     <img src="public/images/products/<?php echo $value; ?>">

@@ -24,7 +24,7 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 |
 */
 //$config['base_url'] = 'http://[::1]/TTTN-Green';
-$config['base_url'] = 'http://banhang.local/';
+$config['base_url'] = 'http://banhang.local:81/';
 
 /*
 |--------------------------------------------------------------------------

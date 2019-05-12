@@ -47,8 +47,8 @@
 
   		?>
       <footer class="main-footer">
-       <div class="pull-right hidden-xs"><b>Version</b> 2.3.5</div>
-       <p class="text-center">Copyright &copy; 2017 <a href="http://facebook.com/trungphatit">PYWeb</a>.</strong> All rights reserved.
+       <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
+       <p class="text-center">Copyright &copy; 2019 <a href="https://www.facebook.com/sauanhit.0109">VPDi</a>.</strong> All rights reserved.
       </footer>
 	    
     </div><!-- ./wrapper -->
